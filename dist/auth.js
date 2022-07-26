@@ -6,7 +6,8 @@ netlifyIdentity.on("login", (user) => {
       .refresh()
       .then((jwt) => {
         url.searchParams.set("refresh", "login");
-        url.pathname = url.searchParams.get("return_url") || "/restricted";
+        url.pathname =
+          `/restricted/${url.searchParams.get("return_url")}` || "/restricted";
         url.searchParams.delete("return_url");
         document.location.href = url.toString();
       })
