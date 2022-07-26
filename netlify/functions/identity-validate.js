@@ -1,4 +1,4 @@
-exports.handler = function ({ body }, callback) {
+exports.handler = function ({ body }, _, callback) {
   const { user } = JSON.parse(body);
   const { email } = user;
 
