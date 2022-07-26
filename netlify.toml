@@ -1,0 +1,16 @@
+[[redirects]]
+	from = "/restricted/login"
+	to = "/restricted/login"
+	status = 200
+
+[[redirects]]
+	from = "/restricted/*"
+	status = 200
+	force = true
+	conditions = {Role = ["restricted"]}
+
+[[redirects]]
+	from = "/restricted/*"
+	to = "/restricted/login?return_url=:splat"
+	status = 302
+	force = true
